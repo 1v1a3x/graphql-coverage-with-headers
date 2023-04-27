@@ -1,5 +1,5 @@
 {
-  "name": "graphql-coverage",
+  "name": "graphql-coverage-wh",
   "version": "0.0.4",
   "description": "Show which resolvers are triggered by your GraphQL queries",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/APIs-guru/graphql-coverage.git"
+    "url": "git+https://github.com/1v1a3x/graphql-coverage-with-headers.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/APIs-guru/graphql-coverage/issues"
+    "url": "https://github.com/1v1a3x/graphql-coverage-with-headers.git/issues"
   },
-  "homepage": "https://github.com/APIs-guru/graphql-coverage#readme",
+  "homepage": "https://github.com/1v1a3x/graphql-coverage-with-headers.git#readme",
   "dependencies": {
     "chalk": "2.1.0",
     "express": "4.16.4",
