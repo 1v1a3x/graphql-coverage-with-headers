@@ -1,4 +1,4 @@
-# graphql-coverage
+# graphql-coverage-with-headers
 
 ## Install
 
