@@ -3,11 +3,15 @@ import * as path from 'path';
 import * as express from 'express';
 import * as graphqlHTTP from 'express-graphql';
 import {red, green, blue} from 'chalk';
-import fetch from 'node-fetch';
+import fetch, { Headers } from 'node-fetch';
 import { Kind, TypeInfo, print, visit, visitWithTypeInfo, buildClientSchema, introspectionQuery } from 'graphql';
 
 const coverage = {};
 const originUrl = process.argv[2];
+const requestHeaders = new Headers({
+  'content-type': 'application/json'
+});
+requestHeaders.append(process.argv[3],process.argv[4])
 if (!originUrl) throw Error('Specify URL as the 1st argument!');
 
 (async () => {
@@ -22,6 +26,7 @@ if (!originUrl) throw Error('Specify URL as the 1st argument!');
   app.listen(9003);
   console.log(`\n${green('✔')} Your GraphQL Fake API is ready to use 🚀 \n
   ${blue('❯')} Coverage Graph:\t http://localhost:9003/coverage
+  ${blue('❯')} Coverage Graph:\t http://localhost:9003/coverage-map
   ${blue('❯')} GraphQL API:\t http://localhost:9003/graphql`);
 })()
   .catch(error => console.error(red(error.stack)));
@@ -30,7 +35,7 @@ async function graphqlFetch(body) {
   const res = await fetch(originUrl, {
     method: 'POST',
     body: JSON.stringify(body),
-    headers: { 'content-type': 'application/json' },
+    headers: requestHeaders,
   });
   if (!res.ok)
     throw Error(`${res.status} ${res.statusText}\n${await res.text()}`);
