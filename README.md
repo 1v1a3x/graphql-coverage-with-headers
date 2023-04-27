@@ -2,17 +2,17 @@
 
 ## Install
 
-    npm install -g graphql-coverage
+    npm install -g graphql-coverage-wh
 or
 
-    yarn global add graphql-coverage
+    yarn global add graphql-coverage-wh
 
 
 ## TL;DR
 
 Show which resolvers are triggered by your GraphQL queries:
 
-    graphql-coverage <URL to your API>
+    graphql-coverage-wh <URL to your API>
 
 ## Goals
 
